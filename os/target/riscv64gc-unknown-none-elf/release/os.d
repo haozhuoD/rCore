@@ -1,1 +1,0 @@
-/home/dhz/os_g/os/target/riscv64gc-unknown-none-elf/release/os: /home/dhz/os_g/os/src/console.rs /home/dhz/os_g/os/src/entry.asm /home/dhz/os_g/os/src/lang_items.rs /home/dhz/os_g/os/src/main.rs /home/dhz/os_g/os/src/sbi.rs
