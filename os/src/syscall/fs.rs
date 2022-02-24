@@ -7,7 +7,7 @@ pub fn sys_write(fd: usize, buf: *const u8, len: usize) -> isize {
             let str = core::str::from_utf8(slice).unwrap();
             // dhz
             // info!(" [debug]sys_write pointer 0x{:X}",buf as usize);
-            // print!("{}", str);
+            print!("{}", str);
             len as isize
         }
         _ => {

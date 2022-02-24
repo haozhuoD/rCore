@@ -4,8 +4,12 @@
 
 #[macro_use]
 mod console;
+mod batch;
 mod lang_items;
 mod sbi;
+mod sync;
+mod syscall;
+mod trap;
 
 use core::arch::global_asm;
 
@@ -37,7 +41,11 @@ pub fn rust_main() -> ! {
     warn!(".rodata [{:#x}, {:#x})", srodata as usize, erodata as usize);
     error!(".data [{:#x}, {:#x})", sdata as usize, edata as usize);
     info!("load range : [{:#x}, {:#x}] _start = {:#x} \n", skernel as usize, ekernel as usize, _start as usize);//
-    panic!("Shutdown machine!");
+    trap::init();
+    batch::init();
+    batch::run_next_app();
+
+    // panic!("unreachable !");
     // loop {}
 }
 

@@ -1,3 +1,9 @@
+const SYSCALL_WRITE: usize = 64;
+const SYSCALL_EXIT: usize = 93;
+
+mod fs;
+mod process;
+
 use fs::*;
 use process::*;
 
