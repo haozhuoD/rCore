@@ -1,15 +1,16 @@
 #![no_std]
 #![no_main]
 #![feature(panic_info_message)]
-#[macro_use]
 
+#[macro_use]
 mod console;
 mod lang_items;
 mod sbi;
 
-
 use core::arch::global_asm;
+
 global_asm!(include_str!("entry.asm"));
+global_asm!(include_str!("link_app.S"));
 
 // fn main() {
 //     // println!("Hello, world!");
